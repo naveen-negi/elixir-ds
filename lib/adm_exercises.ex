@@ -1,0 +1,2 @@
+defmodule AdmExercises do
+end
