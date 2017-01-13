@@ -17,6 +17,45 @@ def loop(root, []) do
     root
 end
 
+
+def build(list, start, size) do
+
+cond do
+  start > size -> nil
+  start <= size     ->
+
+          mid = round((start  + size)/2)
+          IO.puts "start, size and mid is ..."
+          IO.puts start
+          IO.puts size
+          IO.puts mid
+
+          parrent = TreeNode.new(get_node_at(list, mid))
+          IO.puts "parrent is ..."
+          IO.inspect(parrent)
+          IO.puts "....................."
+
+         left = build(list, start, mid - 1)
+
+         parrent_with_left_child = %{parrent | left: left}
+
+           right = build(list, mid + 1, size)
+
+          parrent_with_right_child =  %{parrent_with_left_child | right: right}
+
+              IO.puts "This time call returned ... "
+            IO.inspect(parrent_with_right_child)
+end
+end
+
+  def get_node_at(data,index) do
+    IO.puts "mid is "
+    IO.puts index
+    value = Enum.at(data, round(index))
+    IO.puts(value)
+    value
+  end
+
   def build(head,node) do
 
     case node.data <= head.data do

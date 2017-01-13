@@ -16,14 +16,11 @@ defmodule ChapterOne.Node do
       end
   end
 
-  def reverse(head, start) do
-    case head.next do
-      nil -> %{ head | next: start}
 
-        _ -> next = head.next
-             start = %{ head | next: start}
-             reverse(next, start)
-    end
+  def find_middle_node(start, size) do
+      if size <= 0 do
+        start
+      end
   end
 
 end

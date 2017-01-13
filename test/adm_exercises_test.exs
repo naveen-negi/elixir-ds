@@ -3,6 +3,8 @@ defmodule AdmExercisesTest do
   doctest AdmExercises
 
   test "the truth" do
-    assert 1 + 1 == 2
+    alias ChapterOne.BTree
+    data = [1,2,3,4]
+    BTree.build(data,0,4)
   end
 end
