@@ -2,7 +2,6 @@ defmodule ChapterOne.BTree do
 alias ChapterOne.TreeNode
 
   def initialize([start | next]) do
-#do something over here and
     head = TreeNode.new(start)
     loop(head, next)
   end
@@ -172,6 +171,50 @@ end
     new_root = TreeNode.new(new_root_data)
     new_root = %{new_root | left: first, right: second }
     delete(new_root, new_root)
+  end
+
+def height(root) when is_nil(root)  do
+  0
+end
+
+  def height(root) do
+      left_height = height(root.left)
+      right_height = height(root.right)
+
+      cond do
+        left_height > right_height -> left_height + 1
+        true -> right_height + 1
+      end
+  end
+
+  def print_all_levels(root) do
+       height = height(root)
+       get_all_node_at_level(root, height, height)
+  end
+
+def get_all_node_at_level(root, height, level) when level <= 0  do
+
+end
+
+def get_all_node_at_level(root, height, level) do
+  new_level = level-1
+    get_all_node_at_level(root, height, new_level)
+    get_node_at_level(root, height, level)
+end
+
+  def get_node_at_level(root, height, level) when is_nil(root)  do
+
+  end
+
+def get_node_at_level(root, height, level) when height==level do
+  IO.puts root.data
+end
+
+
+  def get_node_at_level(root, height,tree_level) do
+    new_height = height - 1
+       get_node_at_level(root.left, new_height, tree_level)
+       get_node_at_level(root.right, new_height, tree_level)
   end
 
 end

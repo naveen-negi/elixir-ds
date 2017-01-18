@@ -4,5 +4,9 @@ defmodule ChapterOne.TreeNode do
     %{data: data, left: nil, right: nil}
   end
 
+  def new do
+      %{data: nil, left: nil, right: nil}
+  end
+
 
 end
