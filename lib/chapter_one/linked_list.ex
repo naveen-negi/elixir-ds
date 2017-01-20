@@ -17,7 +17,7 @@ alias ChapterOne.Node
 
 
     def reverse(head, start) do
-      case head.next do
+       case head.next do
         nil -> %{ head | next: start}
           _ ->  start = %{ head | next: start}
                reverse(head.next, start)

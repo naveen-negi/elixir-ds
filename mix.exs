@@ -14,7 +14,7 @@ defmodule AdmExercises.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :remix]]
   end
 
   # Dependencies can be Hex packages:
@@ -28,7 +28,8 @@ defmodule AdmExercises.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-       {:credo, "~> 0.5", only: [:dev, :test]}
+       {:credo, "~> 0.5", only: [:dev, :test]},
+       {:remix, "~> 0.0.1", only: :dev}
     ]
   end
 end

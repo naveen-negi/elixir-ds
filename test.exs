@@ -4,6 +4,14 @@ def run do
   alias ChapterOne.BTree
   data = [0,1,2,3,4,5,6]
   node = BTree.build(data,0,6)
+
+alias ChapterOne.SegTree
+alias ChapterOne.TreeNode
+alias ChapterOne.BTree
+  data = [0,10,12,3,24,25,16]
+  node = SegTree.construct(:min, data, 6)
+  SegTree.rmq(node,3,5)
+
 # BTree.traverse_inorder(node)
 
 
