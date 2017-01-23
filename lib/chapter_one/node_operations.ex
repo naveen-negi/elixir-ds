@@ -13,8 +13,8 @@ defmodule ChapterOne.NodeOperations do
 
   def min_of(left, right) do
     cond do
-      left < right -> left.data
-      left >= right -> right.data
+      left.data < right.data -> left.data
+      left.data >= right.data -> right.data
      end
   end
 

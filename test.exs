@@ -8,6 +8,8 @@ def run do
 alias ChapterOne.SegTree
 alias ChapterOne.TreeNode
 alias ChapterOne.BTree
+alias ChapterOne.RMQ
+alias ChapterOne.NodeOperations
   data = [0,10,12,3,24,25,16]
   node = SegTree.construct(:min, data, 6)
   SegTree.rmq(node,3,5)

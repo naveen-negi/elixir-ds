@@ -35,5 +35,24 @@ end
          %{parrent_node | data: func.(left, right)}
   end
 
+  def update_node_at(root, index, value) do
 
+     mid = Float.floor((root.first + root.last)/2)
+    #  IO.inspect(root)
+
+     cond do
+       index == root.first && index == root.last ->  %{root | data: value}
+       is_leaf_node(root) -> root
+       true ->   left = update_node_at(root.left, index, value)
+                 IO.puts "left is : " <> to_string(left.data)
+                right = update_node_at(root.right, index, value)
+                min_value = min_of(left,right)
+                IO.puts "right is : " <> to_string(right.data)
+                %{root | data: min_value, right: right, left: left}
+     end
+  end
+
+  def is_leaf_node(node) do
+    is_nil(node.left) && is_nil(node.right)
+  end
 end

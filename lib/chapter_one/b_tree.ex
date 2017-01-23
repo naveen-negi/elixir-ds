@@ -193,7 +193,7 @@ end
   end
 
 def get_all_node_at_level(root, height, level) when level <= 0  do
-
+    nil
 end
 
 def get_all_node_at_level(root, height, level) do
@@ -203,7 +203,7 @@ def get_all_node_at_level(root, height, level) do
 end
 
   def get_node_at_level(root, height, level) when is_nil(root)  do
-
+      nil
   end
 
 def get_node_at_level(root, height, level) when height==level do

@@ -5,8 +5,7 @@
 # time. For partial credit, your data structure can use O(n log n) space and have
 # O(log n) query time.
 
-defmodule  do
-  import ChapterOne.RMQ
+defmodule ChapterOne.RMQ  do
 
   def is_within_range(data, root_first, root_last, range_start, range_last) when range_start <= root_first and range_last >= root_last do
     IO.puts "inside range"
