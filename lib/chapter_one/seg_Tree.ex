@@ -38,7 +38,6 @@ end
   def update_node_at(root, index, value) do
 
      mid = Float.floor((root.first + root.last)/2)
-    #  IO.inspect(root)
 
      cond do
        index == root.first && index == root.last ->  %{root | data: value}
@@ -50,6 +49,10 @@ end
                 IO.puts "right is : " <> to_string(right.data)
                 %{root | data: min_value, right: right, left: left}
      end
+  end
+
+  def partial_sum(root, number) do
+
   end
 
   def is_leaf_node(node) do

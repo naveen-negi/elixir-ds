@@ -6,13 +6,16 @@ def run do
   node = BTree.build(data,0,6)
 
 alias ChapterOne.SegTree
-alias ChapterOne.TreeNode
+alias ChapterOne.PartialSum
 alias ChapterOne.BTree
-alias ChapterOne.RMQ
 alias ChapterOne.NodeOperations
+
   data = [0,10,12,3,24,25,16]
-  node = SegTree.construct(:min, data, 6)
-  SegTree.rmq(node,3,5)
+  node = PartialSum.construct(data)
+
+
+  SegTree.get_partial_sum()
+  SegTree.update_node_at(node, 2, 11)
 
 # BTree.traverse_inorder(node)
 
