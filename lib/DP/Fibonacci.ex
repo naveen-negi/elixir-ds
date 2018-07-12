@@ -1,8 +1,6 @@
 defmodule DP.Fibonacci do
 alias DP.KVStore
 
-
-
 def fib_sum_dp(n) do
   KVStore.start_link
   fib_sum(n)
