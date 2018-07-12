@@ -5,7 +5,6 @@ def fib_sum_dp(n) do
   KVStore.start_link
   fib_sum(n)
 end
-
 def fib_sum(n) when n <= 1 do
   n
 end
