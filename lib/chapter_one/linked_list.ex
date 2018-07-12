@@ -2,8 +2,6 @@ defmodule ChapterOne.LinkedList do
 alias ChapterOne.Node
 
   def build([head | tail] ) do
-    IO.inspect head
-
     start = Node.new(head)
 
     if tail == [] do
@@ -14,15 +12,13 @@ alias ChapterOne.Node
     end
   end
 
-
-
-    def reverse(head, start) do
-       case head.next do
-        nil -> %{ head | next: start}
-          _ ->  start = %{ head | next: start}
-               reverse(head.next, start)
-      end
+  def reverse(head, start) do
+    case head.next do
+      nil -> %{ head | next: start}
+      _ ->  start = %{ head | next: start}
+      reverse(head.next, start)
     end
+  end
 
     def reverse(head) do
          if head == nil do
